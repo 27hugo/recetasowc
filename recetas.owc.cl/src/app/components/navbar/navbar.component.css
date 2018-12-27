@@ -1,0 +1,18 @@
+.navbar{
+  color: #fff;
+}
+.navbar-nav{
+  width: 70%;
+}
+.nav-item{
+  margin-left: 5%;
+}
+
+.nav-link{
+  text-transform: uppercase;
+  font-family: 'Bree Serif', serif;
+  font-weight: 300;
+}
+.nav-link:hover{
+  cursor: pointer;
+}

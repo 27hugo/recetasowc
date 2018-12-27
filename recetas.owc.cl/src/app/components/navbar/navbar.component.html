@@ -1,0 +1,28 @@
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+  <a class="navbar-brand" routerLink="/">RecetasOWC</a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>Menu
+  </button>
+  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+    <ul class="navbar-nav mr-auto">
+      <li class="nav-item">
+        <a class="nav-link" routerLink="/recetas/categoria/0">Recetas</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" routerLink="/acerca-de">Acerca De</a>
+      </li>
+      <li class="nav-item" *ngIf="!session">
+        <a class="nav-link" routerLink="/login" >Iniciar sesión</a>
+      </li>
+      <li class="nav-item" *ngIf="session">
+        <a class="nav-link" (click)="logout()" >Cerrar sesión</a>
+      </li>
+      <li class="nav-item" *ngIf="session">
+        <a class="nav-link" routerLink="/administrar">Administrar</a>
+      </li>
+    </ul>
+    <div *ngIf="session" class="my-2 my-lg-0">
+      <label>Bienvenido {{session.usuario.adm_nombre}} {{session.usuario.adm_apellido}}</label>
+    </div>
+  </div>
+</nav>

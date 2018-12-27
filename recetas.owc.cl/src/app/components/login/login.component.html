@@ -1,0 +1,31 @@
+<div class="container login justify-content-center">
+  <div class="row justify-content-center">
+    <h4>Inicio de sesión</h4>
+  </div>
+  <div class="row justify-content-center">
+    <p>Inicie sesión para administrar recetas y/o usuarios en el sistema.</p>
+  </div>
+  <div class="row justify-content-center">
+    <form class="col-lg-4" #login_data="ngForm" (ngSubmit)="logIn(login_data)">
+      <div class="form-group">
+        <label>Run(sin puntos) o correo electrónico</label>
+        <input class="form-control" type="text" name="username" ngModel required placeholder="Ejemplo: 12345678-9">
+      </div>
+      <div class="form-group">
+        <label>Contraseña</label>
+        <input class="form-control" type="password" name="password" ngModel required placeholder="******">
+      </div>
+      <div *ngIf="showError" class="form-group">
+        <div class="alert alert-warning alert-dismissible fade show" role="alert">
+          <strong>Error!</strong> {{errorResponse}}
+          <button type="button" class="close" aria-hidden="true" (click)="closeError()" >
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+      </div>
+      <div class="form-group">
+        <button class="btn btn-primary">logIn()</button>
+      </div>
+    </form>
+  </div>
+</div>

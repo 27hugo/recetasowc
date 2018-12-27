@@ -1,0 +1,58 @@
+
+<div class="container">
+  <div class="row">
+    <div class="col-lg-12">
+      <h3>Agregar usuarios</h3>
+      <p>Aqui puede agregar un usuario indicando el nivel de permiso a otorgar.<br>
+        <br>Los permisos son los siguientes:
+        <br>- Normal (proxima version): Solo pueden agregar recetas, se requiere de la aprobacion de un
+        admin o de un moderador para que estas se muestren en la pagina.
+        <br>- Moderador: Pueden agregar, modificar o eliminar solo las recetas propias, ademas
+        de poder aceptar las recetas que se encuentren pendientes de revision(proxima version)
+        <br>- Admin: Puede agregar quitar o modificar recetas, ademas de aceptar las recetas
+        pendientes(prixma version) y agregar, eliminar o modificar usuarios.
+      </p>
+    </div>
+  </div>
+</div>
+
+<div class="container">
+  <form class="row" [formGroup]="usuarioForm" (ngSubmit)="onSubmit()">
+    <div class="form-group col-lg-6">
+      <label>Nombre</label>
+      <input class="form-control" type="text" formControlName="adm_nombre" placeholder="Ejemplo: Juan" required>
+    </div>
+    <div class="form-group col-lg-6">
+      <label>Apellido</label>
+      <input class="form-control" type="text" formControlName="adm_apellido" placeholder="Ejemplo: Perez" required>
+    </div>
+    <div class="form-group col-lg-4">
+      <label>Run</label>
+      <input class="form-control" type="text" formControlName="adm_rut" placeholder="Ejemplo: 18452932-k" required>
+    </div>
+    <div class="form-group col-lg-8">
+      <label>Correo electronico</label>
+      <input class="form-control" type="email" formControlName="adm_correo" placeholder="Ejemplo: juan.perez@gmail.com" required>
+    </div>
+    <div class="form-group col-lg-4">
+      <label>Contraseña</label>
+      <input class="form-control" formControlName="adm_password" type="password" placeholder="*********" required>
+    </div>
+    <div class="form-group col-lg-3">
+      <label>Tipo de usuario</label>
+      <select class="form-control" formControlName="adm_nivel_permiso" required>
+        <option value="moderador">Moderador</option>
+        <option value="admin">Admin</option>
+      </select>
+    </div>
+    <div *ngIf="showError" style="margin-left:16px;" class="alert alert-warning alert-dismissible fade show" role="alert">
+      {{errorMsg}}
+      <button type="button" class="close" (click)="closeError()" aria-label="Close">
+        <span aria-hidden="true">&times;</span>
+      </button>
+    </div>
+    <div class="form-group col-lg-12">
+      <button type="submit" class="btn btn-primary">Agregar usuario</button>
+    </div>
+  </form>
+</div>

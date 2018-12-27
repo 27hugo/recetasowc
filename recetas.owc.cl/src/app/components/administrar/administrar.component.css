@@ -1,0 +1,20 @@
+.container{
+    padding: 0px;
+}
+
+.list-group-item{
+    border-style: none;
+    background-color: transparent;
+    margin-bottom: 5px;
+    transition: all 0.3s;
+}
+.list-group-item:hover{
+    background-color: rgba(0,255,255, 0.2);
+}
+.router{
+    background-color: rgba(255,255,255,0.8);
+}
+.menu{
+    margin-top: 10px;
+    padding: 20px;
+}

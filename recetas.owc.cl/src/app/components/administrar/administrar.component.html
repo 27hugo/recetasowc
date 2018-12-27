@@ -1,0 +1,19 @@
+<div class="container">
+  <div class="row">
+    <div class="col-lg-3 menu">
+      <div>
+        <h3>Administracion</h3>
+        <p>nivel permiso: {{session.usuario.adm_nivel_permiso}}</p>
+      </div>
+      <div class="list-group">
+        <a class="list-group-item list-group-item-action" routerLink="recetas/agregar">Agregar Receta</a>
+        <!-- a class="list-group-item list-group-item-action" routerLink="recetas/modificar">Modificar Receta</a -->
+        <a class="list-group-item list-group-item-action" *ngIf="session.usuario.adm_nivel_permiso == 'admin'" routerLink="usuarios/agregar">Agregar Usuario</a>
+        <a class="list-group-item list-group-item-action" routerLink="usuarios/modificar">Mis datos</a>
+      </div>
+    </div>
+    <div class="col-lg-9 router">
+      <router-outlet></router-outlet>
+    </div>
+  </div>
+</div>

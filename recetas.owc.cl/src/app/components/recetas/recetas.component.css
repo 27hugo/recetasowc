@@ -1,0 +1,28 @@
+.container{
+  padding-top: 20px;
+}
+.card{
+  padding: 0;
+  border: none;
+  border-style: none;
+  border-radius: 0;
+  margin: 0px;
+  background-color: transparent;
+}
+.card div{
+  border-radius: 0px 0px 0px 0px;
+  margin-left: 6px;
+  margin-right: 6px;
+  margin-bottom: 12px;
+  margin-top: 6px;
+}
+.card div p, .card div h6{
+  color: #000;
+  padding-top: 15px;
+  padding-left: 5px;
+  padding-right: 5px;
+  padding-bottom: 10px;
+}
+.card div img:hover{
+  cursor: pointer
+}

@@ -1,0 +1,39 @@
+# See http://help.github.com/ignore-files/ for more about ignoring files.
+
+# compiled output
+/recetas.owc.cl/dist
+/recetas.owc.cl/tmp
+/recetas.owc.cl/out-tsc
+
+# dependencies
+/recetas.owc.cl/node_modules
+
+# IDEs and editors
+/recetas.owc.cl/.idea
+/recetas.owc.cl/.project
+/recetas.owc.cl/.classpath
+/recetas.owc.cl/.c9/
+/recetas.owc.cl/*.launch
+/recetas.owc.cl/.settings/
+/recetas.owc.cl/*.sublime-workspace
+
+# IDE - VSCode
+/recetas.owc.cl/.vscode/*
+/recetas.owc.cl/!.vscode/settings.json
+/recetas.owc.cl/!.vscode/tasks.json
+/recetas.owc.cl/!.vscode/launch.json
+/recetas.owc.cl/!.vscode/extensions.json
+
+# misc
+/recetas.owc.cl/.sass-cache
+/recetas.owc.cl/connect.lock
+/recetas.owc.cl/coverage
+/recetas.owc.cl/libpeerconnection.log
+/recetas.owc.cl/npm-debug.log
+/recetas.owc.cl/yarn-error.log
+/recetas.owc.cl/testem.log
+/recetas.owc.cl/typings
+
+# System Files
+/recetas.owc.cl/.DS_Store
+/recetas.owc.cl/Thumbs.db

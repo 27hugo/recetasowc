@@ -1,0 +1,25 @@
+<div class="sidebar">
+  <div>
+    <h4>Colaboradores</h4>
+    <ul>
+      <li>Hugo Mancilla</li>
+      <li>Olga Tellez</li>
+      <li>Hector Rivera</li>
+      <li><a routerLink="/usuarios">Todos los colaboradores</a></li>
+    </ul>
+  </div>
+  <div>
+    <h4>Ultimas 5 Recetas</h4>
+    <ul>
+      <li *ngFor="let receta of lastRecetas"><a routerLink="/receta/{{receta.rec_id}}">{{receta.rec_nombre}}</a></li>
+      <li><a routerLink="/recetas/categoria/0">Todas las recetas</a></li>
+    </ul>
+  </div>
+  <div>
+    <h4>Por Categorias</h4>
+    <ul>
+      <li *ngFor="let categoria of categorias"><a routerLink="/recetas/categoria/{{categoria.cat_id}}">{{categoria.cat_nombre}}</a></li>
+      <li><a routerLink="/recetas/categoria/0">Todas las categorias</a></li>
+    </ul>
+  </div>
+</div>

@@ -1,0 +1,27 @@
+<div class="row">
+<div class="col-lg-9">
+  <div class="container">
+    <div class="row justify-content-start">
+      <div class="col-lg-12">
+        <h3><i>Recetas OWC</i></h3>
+        <p>En RecetasOWC encontrarás una pequeña colección de las mejores recetas utilizadas 
+              tanto en el día a día, como en ocasiones especiales. Por esto, y para no depender más
+              de libros o cuadernos en donde buscar las recetas, es que se creó RecetasOWC, esperando
+              tener cada vez más colaboradores que nos ayuden a sostener y mantener actualizada esta
+              página web.
+        </p>
+      </div>
+    </div>
+    <div class="row">
+      <h3><i>Revisa algunas de nuestras categorías</i></h3>
+    </div>
+    <div routerLink="recetas/categoria/{{cat.cat_id}}" *ngFor="let cat of categorias" class="row justify-content-center categoria" [style.backgroundImage]="'url('+ cat.cat_imageurl +')'">
+      {{cat.cat_nombre}}
+    </div>
+  </div>
+</div>
+
+<div class="col-lg-3">
+<app-sidebar></app-sidebar>
+</div>
+</div>

@@ -1,0 +1,68 @@
+<div class="row">
+  <div class="col-lg-9 container receta">
+    <div class="row justify-content-center">
+      <div class="col-lg-6">
+        <h3>{{receta.rec_details.rec_nombre}}</h3>
+        <button *ngIf="session" (click)="updateReceta()" class="btn btn-success">Modificar Receta</button>
+        <button *ngIf="session" type="button" data-toggle="modal" data-target="#deleteModal" class="btn btn-danger">Eliminar Receta</button>
+        <p>
+          Duracion: {{receta.rec_details.rec_duracion}} minutos/ 
+          Porciones: {{receta.rec_details.rec_porciones}} personas<br>
+          Creado por: {{receta.rec_usuarios.adm_nombre}} {{receta.rec_usuarios.adm_apellido}}<br>
+          Fecha: {{receta.rec_details.rec_fecha_creacion |  date:'dd/MM/yyyy'}}
+        </p>
+        <h4>Ingredientes</h4>
+        <ul>
+          <li *ngFor="let receta of receta.rec_ingredientes">{{receta.ing_cantidad}} {{receta.ing_nombre}}</li>
+        </ul>
+      </div>
+      <div class="col-lg-6">
+        <img  width="100%" style="min-height:80%"  src="{{receta.rec_details.rec_imageurl}}">
+      </div>
+      <div class="col-lg-12">
+        <h4>Preparación</h4>
+        <p>{{receta.rec_details.rec_preparacion}}</p>
+      </div>
+    </div>
+  </div>
+  <div class="col-lg-3">
+    <app-sidebar></app-sidebar>
+  </div>
+</div>
+
+<div class="modal fade" id="deleteModal" tabindex="-1" role="dialog">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title">Eliminar Receta</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <p><b>ADVERTENCIA!</b> ¿Esta seguro que desea borrar la receta {{receta.rec_details.rec_nombre}}?
+        <br>Para eliminar la receta por favor re-escriba el nombre de la receta a eliminar:
+        </p>
+        <form [formGroup]="deleteRecetaForm" (ngSubmit)="deleteReceta()">
+          <div class="form-group">
+            <input type="text" class="form-control" formControlName="rec_nombre" placeholder="{{receta.rec_details.rec_nombre}}">
+          </div>
+          <div>
+            <div *ngIf="showError" class="alert alert-warning alert-dismissible fade show" role="alert">
+              {{deleteMsg}}
+              <button type="button" class="close" (click)="closeError()" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+              </button>
+            </div>
+          </div>
+          <div class="form-group">
+            <button class="btn btn-danger">Eliminar Receta</button>
+          </div>
+        </form>
+      </div>
+      <div class="modal-footer">
+        <button type="submit" class="btn btn-secondary" data-dismiss="modal">Cancelar</button>
+      </div>
+    </div>
+  </div>
+</div>

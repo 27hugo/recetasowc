@@ -1,0 +1,30 @@
+.container{
+    padding-top: 30px;
+}
+.container div{
+    padding-bottom: 20px;
+}
+.row p{
+    padding-top: 30px;
+    font-size: 1.6rem;
+    font-family: 'Charm', cursive;
+}
+.row{
+    margin-bottom: 10px;
+}
+.categoria{
+    color: #fff;
+    font-weight: 800;
+    border-radius: 50px 0px 50px 0px;
+    text-shadow: 3px 3px #000;
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 2rem;
+    opacity: 0.6;
+    padding-top: 30px;
+    padding-bottom: 30px;
+    
+}
+.categoria:hover{
+    opacity: 1;
+    cursor: pointer;
+}
